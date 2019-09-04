@@ -32,10 +32,7 @@ class Shell extends React.Component{
             </div>
         );
     }
-    // componentDidMount() {
-    //     this.itemList = document.getElementsByClassName('itm');
-    //     this.itemList[this.index].append(<Coupon/>)
-    // }
+
   };
 
 export default Shell;
