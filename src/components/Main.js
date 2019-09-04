@@ -1,7 +1,7 @@
-import React from 'react';
-import Shell from './Shell';
+import React from 'react'    
+import Shell from './Shell'    
 
-class Main extends React.component{
+export default class Main extends React.component{
     render() {
         return (
             <div>
@@ -9,9 +9,6 @@ class Main extends React.component{
                 <Shell />
                 <Shell />
             </div>
-        );
+        )    
     }
 }
-
-
-export default Main;
