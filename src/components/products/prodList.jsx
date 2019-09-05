@@ -37,5 +37,3 @@ export const Apple = props => (
 export const Butter = props => (
     <img src={butter} />
 )
-
-

@@ -1,68 +1,65 @@
-import React from 'react'    
-import 'core-js/es6/map'    
-import 'core-js/es6/set'    
+import React from 'react'
+import 'core-js/es6/map'
+import 'core-js/es6/set'
 import { Cheese, Pasta, Milk, Lemon, Sausage, Coffee, Choco, Apple, Butter } from './products/prodList'
 
-
-
+const allProducts = [
+    <Apple />,
+    <Milk />,
+    <Choco />,
+    <Sausage />,
+    <Pasta />,
+    <Coffee />,
+    <Butter />,
+    <Lemon />,
+    <Cheese />
+]
 export default class Item extends React.Component {
+
     constructor(props) {
-        super(props)    
-
-        this.state = {
-            visible: true,
-            present: false,
-            moves: 0,
-        }    
- 
-        this.products = [
-            <Apple />,
-            <Milk />,
-            <Choco />,
-            <Sausage/>,
-            <Pasta />,
-            <Coffee/>,
-            <Butter/>,
-            <Lemon />,
-            <Cheese />
-        ]    
-
-        this.prodAmmount = this.products.length    
-        this.prod = this.getProd()    
-        this.indexes = [this.randomInteger(0, this.prodAmmount-1), this.randomInteger(0, this.prodAmmount-1)]
-
+        super(props)
+        this.prodList = allProducts
+        this.prodAmmount = this.prodList.length
+        this.prod = this.getProd()
+        this.indexes = [this.randomInteger(0, this.prodAmmount - 1), this.randomInteger(0, this.prodAmmount - 1)]
     }
-    getInitialState = () => ( { isShow: true } )
+    state = {
+        visible: true,
+        present: false,
+        moves: 0,
+    }
+
+    getInitialState = () => ({ isShow: true })
     handleClick = () => {
         this.setState({
             visible: !this.state.visible,
             moves: this.state.moves + 1,
-        })    
+        })
     }
     randomInteger = (min, max) => {
         let rand = min + Math.random() * (max + 1 - min)       //lodash подгрузить
-        return Math.floor(rand)    
+        return Math.floor(rand)
     }
     getProd = () => {
-        let index = this.randomInteger(0, this.prodAmmount-1)    
-        return this.products[index]    
+        let index = this.randomInteger(0, this.prodAmmount - 1)
+        return this.prodList[index]
     }
 
 
     render() {  // вынести в функцию, так не очень красиво писать
         return (
             this.state.visible ?
-            <div className="itm" onClick={this.handleClick}>
-                <div className="itm-content">
-                    {this.prod}
+                <div className="itm" onClick={this.handleClick}>
+                    <div className="itm-content">
+                        {this.prod}
+                    </div>
                 </div>
-            </div>
-            :
-            <div className="itm " onClick={this.handleClick}>
-                <div className="itm-content flip">
-                { this.prod }
+                :
+                <div className="itm " onClick={this.handleClick}>
+                    <div className="itm-content flip">
+                        {this.prod}
+                    </div>
                 </div>
-            </div>
-        )    
+        )
     }
 }    

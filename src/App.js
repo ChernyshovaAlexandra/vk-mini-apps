@@ -4,15 +4,15 @@ import { View } from '@vkontakte/vkui'
 import '@vkontakte/vkui/dist/vkui.css'    
 import Home from './panels/Home'    
 
-class App extends React.Component {
+
+export default class App extends React.Component {
 	constructor(props) {
 		super(props)    
-
-		this.state = {
-			activePanel: 'home',
-			fetchedUser: null
-		}    
 	}
+	state = {
+		activePanel: 'home',
+		fetchedUser: null
+	}    
 
 	componentDidMount() {
 		connect.subscribe((e) => {
@@ -21,7 +21,7 @@ class App extends React.Component {
 					this.setState({ fetchedUser: e.detail.data })    
 					break    
 				default:
-					console.log(e.detail.type)    
+					// console.log(e.detail.type)    
 			}
 		})    
 		connect.send('VKWebAppGetUserInfo', {})    
@@ -39,5 +39,3 @@ class App extends React.Component {
 		)    
 	}
 }
-
-export default App    

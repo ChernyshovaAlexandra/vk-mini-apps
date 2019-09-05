@@ -1,24 +1,22 @@
-import React from "react"    
-import 'core-js/es6/map'    
-import 'core-js/es6/set'    
+import React from "react"
+import 'core-js/es6/map'
+import 'core-js/es6/set'
 
-class Shop extends React.Component{
-	constructor(props) {
-        super(props)    
-        this.state = {
-            moves: 0
-        }    
-        this.handleClick.bind(this)    
+export default class Shop extends React.Component {
+    constructor(props) {
+        super(props)
     }
-  handleClick = () => {
+    state = {
+        moves: 0
+    }
+    handleClick = () => {
         this.setState({
-			moves: this.state.moves + 1,
-        })    
-	}
-	render(){
-		return (
-			<div className="moves"  onClick ={this.handleClick}> { this.state.moves } </div>
-		)
-	}
+            moves: this.state.moves + 1,
+        })
+    }
+    render() {
+        return (
+            <div className="moves" onClick={this.handleClick}> {this.state.moves} </div>
+        )
+    }
 }
-export default Shop    
