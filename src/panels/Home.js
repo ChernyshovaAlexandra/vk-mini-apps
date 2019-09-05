@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Panel, ListItem, Button, Group, Div, Avatar, PanelHeader, Epic, Tabbar, TabsItem, FixedLayout} from '@vkontakte/vkui';
+import React from 'react'    
+import PropTypes from 'prop-types'    
+import { Panel, ListItem, Button, Group, Div, Avatar, PanelHeader, Epic, Tabbar, TabsItem, FixedLayout} from '@vkontakte/vkui'    
 import Shell from '../components/Shell'
 
 
@@ -31,7 +31,7 @@ const Home = ({ id, go, fetchedUser }) => (
 			<Tabbar></Tabbar>
 		</Epic>
 	</Panel>
-);
+)    
 
 Home.propTypes = {
 	id: PropTypes.string.isRequired,
@@ -44,6 +44,6 @@ Home.propTypes = {
 			title: PropTypes.string,
 		}),
 	}),
-};
+}    
 
-export default Home;
+export default Home    

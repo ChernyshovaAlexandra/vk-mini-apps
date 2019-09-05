@@ -1,5 +1,5 @@
-import React from 'react';
-import Main from '../components/Main';
+import React from 'react'    
+import Main from '../components/Main'    
 
 class Dixy extends React.Component {
     render() {
@@ -8,10 +8,10 @@ class Dixy extends React.Component {
                 <Main />
                 <h1>Dixy App</h1>
             </div>
-        );
+        )    
     }
        
-};  
+}      
 
 
-export default Dixy;
+export default Dixy    

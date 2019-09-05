@@ -1,19 +1,19 @@
-import React from "react";
-import 'core-js/es6/map';
-import 'core-js/es6/set';
+import React from "react"    
+import 'core-js/es6/map'    
+import 'core-js/es6/set'    
 
 class Shop extends React.Component{
 	constructor(props) {
-        super(props);
+        super(props)    
         this.state = {
             moves: 0
-        };
-        this.handleClick.bind(this);
+        }    
+        this.handleClick.bind(this)    
     }
   handleClick = () => {
         this.setState({
 			moves: this.state.moves + 1,
-        });
+        })    
 	}
 	render(){
 		return (
@@ -21,4 +21,4 @@ class Shop extends React.Component{
 		)
 	}
 }
-export default Shop;
+export default Shop    

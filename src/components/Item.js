@@ -1,70 +1,58 @@
-import React from 'react';
-import 'core-js/es6/map';
-import 'core-js/es6/set';
-import Apple from './products/apple';
-import Milk from './products/milk';
-import Choco from './products/choco';
-import Sausage from './products/sausage';
-import Pasta from './products/pasta';
-import Coffee from './products/coffee';
-import Butter from './products/butter'
-import Lemon from './products/lemon'
-import Cheese from './products/cheese'
+import React from 'react'    
+import 'core-js/es6/map'    
+import 'core-js/es6/set'    
+import { Cheese, Pasta, Milk, Lemon, Sausage, Coffee, Choco, Apple, Butter } from './products/prodList'
 
 
 
-class Item extends React.Component {
+export default class Item extends React.Component {
     constructor(props) {
-        super(props);
+        super(props)    
 
         this.state = {
             visible: true,
             present: false,
             moves: 0,
-        };
-
-        this.handleClick.bind(this);
-        this.randomInteger.bind(this);
+        }    
+        // console.log('---', _.isEqual(1,2))
+        this.handleClick.bind(this)    
+        this.randomInteger.bind(this)    
         this.products = [
             <Apple />,
             <Milk />,
             <Choco />,
-            <Sausage />,
+            <Sausage/>,
             <Pasta />,
-            <Coffee />,
-            <Butter />,
+            <Coffee/>,
+            <Butter/>,
             <Lemon />,
             <Cheese />
-        ];
+        ]    
 
-        this.prodAmmount = this.products.length;
-        this.prod = this.getProd();
+        this.prodAmmount = this.products.length    
+        this.prod = this.getProd()    
         this.indexes = [this.randomInteger(0, this.prodAmmount-1), this.randomInteger(0, this.prodAmmount-1)]
 
     }
-    getInitialState() {
-        return {
-            isShow: true
-        };
-    }
+    getInitialState = () => ( { isShow: true } )
     handleClick = () => {
         this.setState({
             visible: !this.state.visible,
             moves: this.state.moves + 1,
-        });
+        })    
     }
     randomInteger = (min, max) => {
-        let rand = min + Math.random() * (max + 1 - min);
-        return Math.floor(rand);
+        let rand = min + Math.random() * (max + 1 - min)       //lodash подгрузить
+        return Math.floor(rand)    
     }
     getProd = () => {
-        let index = this.randomInteger(0, this.prodAmmount-1);
-        return this.products[index];
+        let index = this.randomInteger(0, this.prodAmmount-1)    
+        return this.products[index]    
     }
     
 
-    render() {
-        const { args } = this.props;
+    render() {  // вынести в функцию, так не очень красиво писать
+        const { args } = this.props    
         return (
             this.state.visible ?
                 <div className="itm" onClick={this.handleClick}>
@@ -78,8 +66,6 @@ class Item extends React.Component {
                     {this.prod}
                     </div>
                 </div>
-        );
+        )    
     }
-};
-
-export default Item;
+}    

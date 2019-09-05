@@ -1,23 +1,24 @@
-import React from 'react';
-import 'core-js/es6/map';
-import 'core-js/es6/set';
-import '../panels/main.css';
-import Item from './Item';
-import Coupon from './coupon';
+import React from 'react'    
+import 'core-js/es6/map'    
+import 'core-js/es6/set'    
+import '../panels/main.css'    
+import Item from './Item'    
+import Coupon from './coupon'    
 
-class Shell extends React.Component{
+
+export default class Shell extends React.Component{
     constructor(props) {
-        super(props);
+        super(props)    
 
         this.state = {
             moves: 0,
-        };
-        this.index = this.randomInteger(0, 6);
+        }    
+        this.index = this.randomInteger(0, 6)    
         console.log(this.index)
     }
     randomInteger = (min, max) => {
-        let rand = min + Math.random() * (max + 1 - min);
-        return Math.floor(rand);
+        let rand = min + Math.random() * (max + 1 - min)    
+        return Math.floor(rand)    
     }
     
     render() {
@@ -30,9 +31,6 @@ class Shell extends React.Component{
                <Item/>
                <Item/>
             </div>
-        );
+        )    
     }
-
-  };
-
-export default Shell;
+  }    
