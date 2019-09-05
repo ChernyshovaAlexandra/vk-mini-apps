@@ -1,7 +1,7 @@
 import React from 'react'    
 import 'core-js/es6/map'    
 import 'core-js/es6/set'    
-import '../panels/main.css'    
+import '../styles/main.css'    
 import Item from './Item'    
 import Coupon from './coupon'    
 
