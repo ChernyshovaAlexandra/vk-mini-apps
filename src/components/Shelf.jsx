@@ -10,12 +10,13 @@ export default class Shell extends React.Component{
     constructor(props) {
         super(props)    
 
-        this.state = {
-            moves: 0,
-        }    
+         
         this.index = this.randomInteger(0, 6)    
         console.log(this.index)
     }
+    state = {
+        moves: 0,
+    }   
     randomInteger = (min, max) => {
         let rand = min + Math.random() * (max + 1 - min)    
         return Math.floor(rand)    
