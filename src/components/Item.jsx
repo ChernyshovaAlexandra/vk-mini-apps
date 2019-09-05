@@ -14,9 +14,7 @@ export default class Item extends React.Component {
             present: false,
             moves: 0,
         }    
-        // console.log('---', _.isEqual(1,2))
-        this.handleClick.bind(this)    
-        this.randomInteger.bind(this)    
+ 
         this.products = [
             <Apple />,
             <Milk />,
@@ -49,23 +47,22 @@ export default class Item extends React.Component {
         let index = this.randomInteger(0, this.prodAmmount-1)    
         return this.products[index]    
     }
-    
+
 
     render() {  // вынести в функцию, так не очень красиво писать
-        const { args } = this.props    
         return (
             this.state.visible ?
-                <div className="itm" onClick={this.handleClick}>
-                    <div className="itm-content">
-                        {this.prod}
-                    </div>
-                </div>
-                :
-                <div className="itm " onClick={this.handleClick}>
-                    <div className="itm-content flip">
+            <div className="itm" onClick={this.handleClick}>
+                <div className="itm-content">
                     {this.prod}
-                    </div>
                 </div>
+            </div>
+            :
+            <div className="itm " onClick={this.handleClick}>
+                <div className="itm-content flip">
+                { this.prod }
+                </div>
+            </div>
         )    
     }
 }    
