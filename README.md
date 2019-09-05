@@ -5,7 +5,9 @@
 ## How to start
 
 Go to created folder and run:
+`npm install @vkontakte/vk-connect`
 `yarn start` || `npm start` — this will start dev server with hot reload on `localhost:10888`.
+
 
 `yarn run build` || `npm run build` — this will build production bundle, with treeshaking, uglify and all this modern fancy stuff
 
