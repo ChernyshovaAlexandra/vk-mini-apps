@@ -2,8 +2,13 @@ import React from "react"
 import 'core-js/es6/map'
 import 'core-js/es6/set'
 import { Shelf } from '../components/Shelf'
-// import { allProducts } from '../components/Item'
+import { Coupon } from '../components/coupon'
+import { Item } from '../components/Item'
 
+const randomInteger = (min, max) => {
+    let rand = min + Math.random() * (max + 1 - min)       //lodash подгрузить
+    return Math.floor(rand)
+}
 export default class Shop extends React.Component {
     constructor(props) {
         super(props)
@@ -11,7 +16,6 @@ export default class Shop extends React.Component {
             moves: 1,
             visible: true
         }
-        // this.prodMass = allProducts
     }
 
     handleClick = () => {
@@ -19,20 +23,21 @@ export default class Shop extends React.Component {
             this.setState({
                 moves: this.state.moves - 1,
             })
-        }
+        } 
         // console.log(this.prodMass)
     }
     render() {
         return (
-            <div className="shop" onClick={ this.handleClick }>
+            <div className="shop" onClick={this.handleClick}>
                 <Shelf />
                 <Shelf />
                 <Shelf />
-                <div className="moves">Осталось ходов: {this.state.moves} </div>
+                <div className="moves">Осталось ходов: {this.state.moves}</div>
             </div>
         )
     }
     componentDidMount = () => {
-        console.log(document.getElementsByClassName('itm'))
+        let index = randomInteger(0, document.getElementsByClassName('itm').length - 1)
+        // console.log( typeof <Item />)
     }
 }

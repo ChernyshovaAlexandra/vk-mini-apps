@@ -21,6 +21,7 @@ export class Shelf extends React.Component{
         let rand = min + Math.random() * (max + 1 - min)    
         return Math.floor(rand)    
     }
+
     
     render() {
         return (
@@ -33,7 +34,7 @@ export class Shelf extends React.Component{
                <Item/>
                <Item/>
                <Item/>
-               <Item/>
+               <Item/> 
             </div>
         )    
     }

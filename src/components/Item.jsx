@@ -2,10 +2,9 @@ import React from 'react'
 import 'core-js/es6/map'
 import 'core-js/es6/set'
 import { Cheese, Pasta, Milk, Lemon, Sausage, Coffee, Choco, Apple, Butter, Melon, Meat, Tide } from './products/prodList'
-import { Coupon } from './coupon'
 
 
-const allProducts =  [
+const allProducts = [
     <Apple />,
     <Milk />,
     <Choco />,
@@ -52,24 +51,27 @@ export class Item extends React.Component {
         let index = this.randomInteger(0, this.prodAmmount - 1)
         return this.prodList[index]
     }
-
-
-    render() {  // вынести в функцию, так не очень красиво писать
-        return (
-            this.state.visible ?
-                <div className="itm" onClick={this.handleClick}>
-                    <div className="itm-content">
-                        {this.prod}
-                    </div>
-
+    RenderItem = () => {
+        return(
+        this.state.visible ?
+            <div className="itm" onClick={this.handleClick}>
+                <div className="itm-content">
+                    {this.prod}
                 </div>
-                :
-                <div className="itm " onClick={this.handleClick}>
-                    <div className="itm-content flip">
-                        {this.prod}
-                    </div>
+            </div>
+            :
+            <div className="itm " onClick={this.handleClick}>
+                <div className="itm-content flip">
+                    {this.prod}
                 </div>
-        )   
+            </div>)
+    }
+
+    render() { 
+         return <this.RenderItem />
+    }
+    componentWillUpdate(){
+        console.log(this.state.moves)
     }
 
 }    
