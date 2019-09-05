@@ -1,9 +1,11 @@
 import React from 'react'
 import 'core-js/es6/map'
 import 'core-js/es6/set'
-import { Cheese, Pasta, Milk, Lemon, Sausage, Coffee, Choco, Apple, Butter } from './products/prodList'
+import { Cheese, Pasta, Milk, Lemon, Sausage, Coffee, Choco, Apple, Butter, Melon, Meat, Tide } from './products/prodList'
+import { Coupon } from './coupon'
 
-const allProducts = [
+
+const allProducts =  [
     <Apple />,
     <Milk />,
     <Choco />,
@@ -12,9 +14,13 @@ const allProducts = [
     <Coffee />,
     <Butter />,
     <Lemon />,
-    <Cheese />
+    <Cheese />,
+    <Melon />,
+    <Meat />,
+    <Tide />
 ]
-export default class Item extends React.Component {
+
+export class Item extends React.Component {
 
     constructor(props) {
         super(props)
@@ -24,17 +30,19 @@ export default class Item extends React.Component {
         this.indexes = [this.randomInteger(0, this.prodAmmount - 1), this.randomInteger(0, this.prodAmmount - 1)]
     }
     state = {
-        visible: true,
         present: false,
-        moves: 0,
+        moves: 1,
+        visible: true
     }
 
     getInitialState = () => ({ isShow: true })
     handleClick = () => {
-        this.setState({
-            visible: !this.state.visible,
-            moves: this.state.moves + 1,
-        })
+        if (this.state.moves > 0) {
+            this.setState({
+                visible: !this.state.visible,
+                moves: this.state.moves - 1,
+            })
+        }
     }
     randomInteger = (min, max) => {
         let rand = min + Math.random() * (max + 1 - min)       //lodash подгрузить
@@ -53,6 +61,7 @@ export default class Item extends React.Component {
                     <div className="itm-content">
                         {this.prod}
                     </div>
+
                 </div>
                 :
                 <div className="itm " onClick={this.handleClick}>
@@ -60,6 +69,7 @@ export default class Item extends React.Component {
                         {this.prod}
                     </div>
                 </div>
-        )
+        )   
     }
+
 }    

@@ -1,7 +1,7 @@
 import React from 'react'    
 import PropTypes from 'prop-types'    
-import { Panel, ListItem, Button, Group, Div, Avatar, PanelHeader, Epic, Tabbar, TabsItem, FixedLayout} from '@vkontakte/vkui'    
-import Shelf from '../components/Shelf'
+import { Panel, ListItem, Group, Avatar, PanelHeader, Epic, Tabbar, TabsItem, FixedLayout} from '@vkontakte/vkui'    
+import Shop from './Shop'
 
 
 const Home = ({ id, go, fetchedUser }) => (
@@ -20,9 +20,7 @@ const Home = ({ id, go, fetchedUser }) => (
 		<Group title="Dixy mob-vk-app">
 		<FixedLayout>
 				<TabsItem> 
-					<Shelf/>
-					<Shelf/>
-					<Shelf/>
+					<Shop />
 				</TabsItem>
 		</FixedLayout>
 		</Group>

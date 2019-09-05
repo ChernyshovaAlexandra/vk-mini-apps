@@ -1,13 +1,15 @@
 import React from 'react'    
-import Shell from './Shelf'    
+import {Shelf} from './Shelf'
+import 'core-js/es6/map'
+import 'core-js/es6/set'    
 
 export default class Main extends React.component{
     render() {
         return (
             <div>
-                <Shell />
-                <Shell />
-                <Shell />
+                <Shelf />
+                <Shelf />
+                <Shelf />
             </div>
         )    
     }
