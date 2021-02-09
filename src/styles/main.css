@@ -6,20 +6,24 @@
     justify-content: center;
     /* background: url(../img/shelf.png) no-repeat bottom; */
     background-size: 70%;
+    border-bottom: 8px solid brown;
 }
 .itm{
-    border: 1px solid gray;
     position: relative;
+}
+.FixedLayout{
+    right: 0;
+    left: 0;
+    margin: auto;
 }
 .itm-content{
     max-width: 250px;
-    width:250px;
+    width:150px;
     flex: 20%;
     margin: 5px;
     height: 200px;
     transform: translateY(0);
     transition: transform .5s;
-    /* background: url(../img/4/2000306264.png) no-repeat bottom; */
     background-size: 50%;
 }
 .itm-content img{
@@ -44,7 +48,7 @@
     height: 50px;
     background: url(../img/4/bk.png) no-repeat center;
     position: absolute;
-    bottom: 5px;
+    bottom: 15px;
     z-index: -1;
     left: 0;
     background-size: 50%;
@@ -54,9 +58,5 @@
 .moves{
     font-size: 20px;
     color: black;
-    z-index: 100;
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    background: gray;
+    margin-top: 30px;
 }

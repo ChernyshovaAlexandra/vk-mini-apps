@@ -8,34 +8,45 @@ import coffee from '../../img/coffee.png'
 import choco from '../../img/choco.png' 
 import apple from '../../img/apple.png' 
 import butter from '../../img/butter.png' 
+import melon from '../../img/melon.png' 
+import meat from '../../img/meat.png' 
+import tide from '../../img/tide.png'
 
 
 export const Cheese = props => (
-    <img src={cheese} />
+    <img alt="prod" src={cheese} />
 )
 export const Pasta = props => (
-    <img src={pasta} />
+    <img alt="prod" src={pasta} />
 )
 export const Milk = props => (
-    <img src={milk} />
+    <img alt="prod" src={milk} />
 )
 export const Lemon = props => (
-    <img src={lemon} />
+    <img alt="prod" src={lemon} />
 )
 export const Sausage = props => (
-    <img src={sausage} />
+    <img alt="prod" src={sausage} />
 )
 export const Coffee = props => (
-    <img src={coffee} />
+    <img alt="prod" src={coffee} />
 )
 export const Choco = props => (
-    <img src={choco} />
+    <img alt="prod" src={choco} />
 )
 export const Apple = props => (
-    <img src={apple} />
+    <img alt="prod" src={apple} />
 )
 export const Butter = props => (
-    <img src={butter} />
+    <img alt="prod" src={butter} />
+)
+export const Melon = props => (
+    <img alt="prod" src={melon} />
 )
 
-
+export const Meat = props => (
+    <img alt="prod" src={meat} />
+)
+export const Tide = props => (
+    <img alt="prod" src={tide} />
+)
